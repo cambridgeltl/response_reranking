@@ -167,7 +167,7 @@ def run_experiment():
         assert len(anchor_samples) > 0
         anchor_sample_list.append((num_anchor, anchor_samples))
 
-    init_model_path = "./output/selection-bert-base-uncased-mintl-ct3-e3-bs64-20_sysonly_delex/"
+    init_model_path = "./output/selection_google-bert-bert-base-uncased_delex/"
 
     epochs = 5
     note = "0.7_mpnet"
@@ -205,8 +205,7 @@ def run_experiment():
 
     loss_str = train_loss.__str__()
     loss_str = loss_str[:loss_str.index("(")]
-    output_path = "./output/similarity-mintl-" + "ct-" + str(context_window) + "-" + loss_str \
-                  + "-e" + str(epochs) + "-bs" + str(batch_size) + "-seed" + str(seed) + "-" + note + "/"
+    output_path = "./output/reranking_similarity_" + note + "/"
 
     model.fit(train_objectives=[(train_dataloader, train_loss)], epochs=epochs, evaluator=evaluator,
               warmup_steps=warmup_steps, output_path=output_path)

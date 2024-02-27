@@ -51,14 +51,15 @@ def run_experiment():
     batch_size = 64
     epochs = 3
     context_window = 3
-    init_model_path = "bert-base-uncased"
+    init_model_path = "google-bert/bert-base-uncased"
     # init_model_path = "cross-encoder/quora-distilroberta-base"
 
-    note = "20_sysonly_delex_bitod"
+    note = "delex"
 
 
     save_model_path = init_model_path.replace("/", "-")
-    output_path = "./output/selection-"+ save_model_path + "-mintl-ct"+ str(context_window) +"-e"+str(epochs)+"-bs"+ str(batch_size) +"-" + note+ "/"
+    output_path = "./output/selection_" + save_model_path + "_" + note+ "/"
+
     train_samples = process_data(context_window=context_window)
     assert len(train_samples) > 0
 

@@ -87,7 +87,7 @@ def run_experiment():
         assert len(anchor_samples) > 0
         anchor_sample_list.append((num_anchor, anchor_samples))
 
-    init_model_path = "./output/similarity-mintl-ct-3-BatchAllTripletLoss-e5-bs128-seed42-0.7_mpnet/"
+    init_model_path ="./output/reranking_similarity_0.7_mpnet/"
 
     model = SentenceTransformer(init_model_path)
 

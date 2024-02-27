@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 def run_eval():
 
-    init_model_path = "./output/classification-mintl-pick-ct3-e5-bs64-seed-42-0.7_mpnet/"
+    init_model_path ="./output/reranking_classification_0.7_mpnet/"
 
     model = CrossEncoder(init_model_path)
     evaluator = CrossOverGenBleuEvaluator(data_path= "./data/0.7_test.json", context_window = 3)

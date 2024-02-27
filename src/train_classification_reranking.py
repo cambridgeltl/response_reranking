@@ -92,12 +92,13 @@ def run_experiment():
     epochs = 5
     context_window = 3
 
-    init_model_path = "./output/selection-cross-encoder-quora-distilroberta-base-mintl-ct3-e3-bs64-20_sysonly_delex/"
+    init_model_path = "./output/selection_google-bert-bert-base-uncased_delex/"
     note = "0.7_mpnet"
 
     logger.info("Starting from: " + init_model_path)
 
-    output_path = "./output/classification-mintl-pick-ct"+ str(context_window) +"-e"+str(epochs)+"-bs"+ str(batch_size) +"-seed-" + str(seed) + "-" + note+ "/"
+    output_path = "./output/reranking_classification_" + note+ "/"
+
     train_samples = process_data(path="./data/0.7_train.json",
                                  overgen_score_path="./data/sim_score_mpnet_train_0.7.json",
                                  greedy_score_path="./data/sim_score_mpnet_train_0.7_greedy.json",
